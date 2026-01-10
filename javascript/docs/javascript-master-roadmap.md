@@ -1,656 +1,396 @@
-
-# 🧭 BYTES JOURNEY — JAVASCRIPT MASTERY ROADMAP (v1.0)
+# 🧭 BYTES JOURNEY — JAVASCRIPT MASTERY ROADMAP (v2.0)
 
 ### _For Experienced Developers, Interview Prep & System-Level Understanding_
 
-----------
+---
 
 ## 🧱 GROUP 0: Language Fundamentals & Core Mechanics
 
-> “Master the building blocks JavaScript interviews love.”
+> "Master the building blocks every interview depends on."
+
+**Theme:** What is a value? How does JS represent data? How do comparisons, coercions, and types work?
 
 ### **Concepts Covered**
 
--   Value types vs reference types
-    
--   Primitive taxonomy (`string`, `number`, `bigint`, `boolean`, `symbol`, `undefined`, `null`)
-    
--   Truthiness & falsiness matrices
-    
--   Implicit & explicit coercion (`Number()`, `String()`, `Boolean()`, unary `+`)
-    
--   Equality rules (`==`, `===`, `Object.is`)
-    
--   Number quirks (`NaN`, `Infinity`, precision limits, `toFixed`)
-    
--   BigInt usage & interoperability
-    
--   Symbols & well-known symbols
-    
--   JSON serialization vs structured cloning
-    
--   Error types & try/catch mechanics
-    
--   Type detection patterns (`typeof`, `instanceof`, `Array.isArray`, `Object.prototype.toString`)
-    
+- Value types vs reference types
+- Primitive taxonomy (`string`, `number`, `bigint`, `boolean`, `symbol`, `undefined`, `null`)
+- Truthiness & falsiness
+- Implicit & explicit coercion (`Number()`, `String()`, `Boolean()`, unary `+`)
+- Equality rules (`==`, `===`, `Object.is`)
+- Number pitfalls (`NaN`, `Infinity`, precision limits)
+- BigInt behavior & interoperability
+- Symbols & well-known symbols
+- JSON serialization vs structured cloning
+- Error types
+- Type detection patterns (`typeof`, `instanceof`, `Array.isArray`, `toString.call`)
 
 ### **Real-World Use**
 
--   Normalizing data inputs before hitting browser or Node APIs
-    
--   Building validation layers without external libraries
-    
--   Designing serialization-safe state snapshots
-    
--   Guarding against precision loss in calculations (currency, telemetry)
-    
+- Normalizing API inputs
+- Safe serialization (state snapshots, caching)
+- Preventing numeric precision loss
+- Writing robust data validators
 
 ### **Mini Projects**
 
--   Implement a reliable `typeOf(value)` helper returning detailed descriptors
-    
--   Build a safe JSON parser with fallback, reviver hooks, and error reporting
-    
--   Create a coercion sandbox that logs conversions and pitfalls in the console or Node REPL
-    
+- Detailed `typeOf(value)` utility
+- Safe JSON parser with fallback + reviver
+- Coercion sandbox (log implicit conversions)
 
 ### **Interview Drills**
 
--   Explain the result of tricky comparisons (`[] == ![]`, `Object.is(NaN, NaN)`)
-    
--   Trace how a mixed-type expression evaluates step by step
-    
--   Design a utility that freezes only plain objects but not arrays or functions
-    
+- Explain tricky comparisons (`[] == ![]`, `Object.is(NaN, NaN)`)
+- Trace mixed-type expressions step-by-step
+- Utility: freeze only plain objects, not arrays/functions
 
 ### **Deep Dive Modules**
 
--   [Value vs Reference in JavaScript](./group-0-language-fundamentals/value-vs-reference.md)
+- [1.0 — Value vs Reference in JavaScript](./group-0-language-fundamentals/1.0-value-vs-reference.md)
+- 1.1 — Type System & Coercion
+- 1.2 — Equality & Identity
+- 1.3 — JSON, Structured Clone & Serialization Semantics
+- 1.4 — Numbers, BigInt & Precision Safety
 
 ### **Blog Ideas**
 
--   _Equality in JavaScript: `==`, `===`, and `Object.is` Demystified_
-    
--   _The Ultimate Guide to JavaScript Types & Coercion_
-    
--   _Avoiding Number Precision Bugs in Real Projects_
-    
+- _Equality in JS: `==`, `===`, `Object.is` Demystified_
+- _The Ultimate Guide to JS Types & Coercion_
+- _Avoiding Number Precision Bugs in Real Projects_
 
-----------
+---
 
 ## 🧠 GROUP 1: Execution, Scope & Closures
 
-> “How JavaScript executes and remembers things.”
+> "How JavaScript executes and remembers things."
+
+**Theme:** How JS creates environments, resolves variables, and retains memory.
 
 ### **Concepts Covered**
 
--   JS runtime overview (single thread, call stack)
-    
--   Execution context (global, function, eval)
-    
--   Lexical environment & scope chain
-    
--   Variable environment
-    
--   Hoisting (functions vs variables)
-    
--   Temporal Dead Zone (TDZ)
-    
--   `var` vs `let` vs `const` — scope & re-declaration
-    
--   Function declarations vs expressions
-    
--   Block scope vs function scope
-    
--   Closures (memory retention, data privacy)
-    
--   Shadowing & name resolution
-    
--   IIFE (Immediately Invoked Function Expressions)
-    
+- JS runtime (call stack, memory model, single thread)
+- Execution context creation
+- Lexical environment & scope chain
+- Variable environment
+- Hoisting (functions vs variables)
+- Temporal Dead Zone (TDZ)
+- `var` vs `let` vs `const`
+- Block scope vs function scope
+- Function declarations vs expressions
+- Closures (memory retention)
+- Shadowing & name resolution
+- IIFE
+- Strict mode scope changes
 
 ### **Real-World Use**
 
--   Creating private state in utilities
-    
--   Avoiding variable leaks in microservices
-    
--   Debugging async variable capture bugs
-    
+- Private state in utilities
+- Avoiding global leaks
+- Debugging async variable-capture bugs
 
 ### **Mini Projects**
 
--   Closure-based counter / rate limiter
-    
--   “Scope visualizer” (log call stack + context levels)
-    
+- Closure-based rate limiter
+- Scope visualizer (logs scope chain)
 
 ### **Blog Ideas**
 
--   _Inside the JS Engine: Execution Contexts & Memory Explained_
-    
--   _Closures — How JavaScript Remembers Variables_
-    
--   _Hoisting & TDZ: What Really Happens Before Your Code Runs_
-    
+- _Inside the JS Engine: Execution Contexts Explained_
+- _Closures — How JavaScript Remembers Variables_
+- _Hoisting & TDZ — The Hidden Execution Phase_
 
-----------
+---
 
 ## ⚙️ GROUP 2: Functions, Composition & Memory
 
-> “Functions are first-class citizens — learn how to think functionally.”
+> "Functions are first-class citizens — master them."
 
-### **Concepts**
+### **Concepts Covered**
 
--   Function expressions vs declarations
-    
--   Higher-Order Functions (HOFs)
-    
--   Functional composition (`pipe`, `compose`)
-    
--   Currying & partial application
-    
--   Pure functions & side effects
-    
--   Immutability
-    
--   Memoization
-    
--   Callbacks & callback hell
-    
--   Function factories
-    
--   Garbage collection & retained closures
-    
+- Function expressions vs declarations
+- Higher-order functions
+- Functional composition (`pipe`, `compose`)
+- Currying & partial application
+- Pure functions & side effects
+- Immutability fundamentals
+- Memoization
+- Callback patterns & callback hell
+- Function factories
+- Garbage collection & retained closures
 
 ### **Real-World Use**
 
--   Configurable data pipelines
-    
--   Logging and caching utilities
-    
--   Predictable, testable code in Node services
-    
+- Logging/middleware pipelines
+- Configurable data processors
+- Predictable business logic (pure function patterns)
 
 ### **Mini Projects**
 
--   Build your own `memoize(fn)` utility
-    
--   Create a `pipe()` function to compose operations
-    
+- Implement `memoize(fn)`
+- Implement `pipe()` and `compose()`
 
 ### **Blog Ideas**
 
--   _Functional Thinking in JavaScript_
-    
--   _Currying, Composition & Why Functional Code Scales_
-    
--   _Memoization in JS — Turning O(n²) into O(1)_
-    
+- _Functional Thinking in JS_
+- _Currying & Composition Explained_
+- _Memoization — Turning O(n²) into O(1)_
 
-----------
+---
 
 ## 🧰 GROUP 3: Core Libraries & Platform APIs
 
-> “Know the built-ins and runtime tools interviews expect.”
+> "Know your tools — browser & Node."
 
-### **Concepts**
+### **Concepts Covered**
 
--   Arrays — mutating vs non-mutating methods, iteration protocols
-    
--   Strings — template literals, Unicode edge cases, normalization
-    
--   Maps, Sets, WeakMaps, WeakSets — use cases & performance
-    
--   Typed arrays & ArrayBuffer fundamentals (bridging to Node `Buffer`)
-    
--   Date & forthcoming Temporal API
-    
--   Intl API for formatting numbers, dates, and plurals
-    
--   RegExp — flags, named groups, lookarounds, Unicode sets
-    
--   Global objects & namespaces (`Math`, `JSON`, `URL`, `structuredClone`)
-    
--   DOM tree structure, live vs static collections
-    
--   Event propagation, delegation, and default behaviors
-    
--   Fetch API, AbortController, Request/Response cloning
-    
--   Client-side storage (localStorage, sessionStorage, IndexedDB)
-    
--   Timers (browser vs Node: `setTimeout`, `setImmediate`, `process.nextTick`)
-    
--   Module resolution (ESM import/export, Node ESM/CommonJS interplay)
-    
+- Arrays (mutating vs non-mutating, iterators)
+- Strings (Unicode, normalization)
+- Maps, Sets, WeakMaps, WeakSets
+- Typed arrays, ArrayBuffer, DataView, Node Buffer
+- Date & Temporal API
+- Intl API
+- RegExp (flags, named groups, Unicode, lookarounds)
+- Global objects (`Math`, `JSON`, `URL`, `structuredClone`)
+- DOM tree & event propagation
+- Fetch API & AbortController
+- Client-side storage (IndexedDB, localStorage)
+- Timers (`setTimeout`, `setImmediate`, `nextTick`)
+- Module resolution: ESM vs CJS
 
 ### **Mini Projects**
 
--   Rebuild `Array.groupBy` and `Array.flatMap` polyfills with tests
-    
--   Create a DOM event visualizer showing capture/bubble order
-    
--   Build a fetch wrapper with cancellation, retries, and exponential backoff
-    
+- `Array.groupBy` polyfill
+- DOM event visualizer
+- Fetch wrapper with cancellation & retries
 
-----------
+---
 
 ## ⚡ GROUP 4: Asynchronous JavaScript (Event Loop, Promises & Streams)
 
-> “The beating heart of modern JavaScript.”
+> "The beating heart of modern JavaScript."
 
-### **Concepts**
+### **Concepts Covered**
 
--   Event Loop (browser rendering vs Node.js phases)
-    
--   Call stack, message queue, microtasks & macrotasks
-    
--   `setTimeout`, `queueMicrotask`, `requestAnimationFrame`, `process.nextTick`
-    
--   Promises — states, chaining, anti-patterns
-    
--   Async/Await — syntax, error handling, concurrency
-    
--   Generators & Async Generators
-    
--   Iterators & Async Iterators
-    
--   Concurrency control (`Promise.all`, `race`, `any`)
-    
--   Streams (browser Streams API, Node readable/writable/transform)
-    
--   Implementing a custom Promise
-    
--   Handling race conditions & parallelism
-    
+- Event Loop (browser vs Node phases)
+- Macrotasks vs microtasks
+- Promises (states, chaining, anti-patterns)
+- Async/await mechanics
+- Generators & async generators
+- Iterators & async iterators
+- Concurrency (`Promise.all`, `race`, `any`)
+- Streams (Web Streams + Node Streams)
+- Custom Promise implementation
+- Race conditions & parallelism
 
 ### **Mini Projects**
 
--   Custom Promise implementation
-    
--   Async generator-based paginated fetcher
-    
--   Web Streams transformer or Node stream pipeline
-    
+- Custom Promise implementation
+- Async generator paginator
+- Web Streams transformer
 
-----------
+---
 
 ## 🧭 GROUP 5: `this` & Execution Context Binding
 
-> “Who is calling — and why it matters.”
+> "Who is calling — and why it matters."
 
-### **Concepts**
+### **Concepts Covered**
 
--   Function invocation vs method invocation
-    
--   Implicit & explicit binding (`call`, `apply`, `bind`)
-    
--   Arrow functions & lexical `this`
-    
--   Constructors and `new`
-    
--   Class methods & inheritance context
-    
--   `this` in callbacks and event listeners
-    
--   `this` in Node modules vs browser
-    
--   Context loss in async functions
-    
--   Fixing context with closures / bind
-    
+- Function invocation vs method invocation
+- Implicit binding
+- Explicit binding (`call`, `apply`, `bind`)
+- Arrow functions & lexical `this`
+- Constructors & `new`
+- Class method binding
+- Context loss in async functions
+- Fixing context (closures, bind, class fields)
 
 ### **Mini Projects**
 
--   Implement custom `bind()`
-    
--   Context logger utility
-    
+- Custom `bind()`
+- Context logger utility
 
-----------
+---
 
 ## 🧱 GROUP 6: Objects, Prototypes & Classes
 
-> “How JavaScript shares behavior.”
+> "How JavaScript shares behavior."
 
-### **Concepts**
+### **Concepts Covered**
 
--   Object creation (`{}`, `Object.create`, constructor)
-    
--   Prototypes & the prototype chain
-    
--   Property descriptors
-    
--   Inheritance via `__proto__`
-    
--   ES6 classes — static, super, private fields
-    
--   Object composition vs inheritance
-    
--   Encapsulation & abstraction
-    
--   Mixins & delegation
-    
--   Object.freeze, seal, assign
-    
+- Object creation patterns
+- Prototype chain
+- Property descriptors
+- Inheritance (`__proto__`, `extends`)
+- ES6 classes: static, private fields, `super`
+- Composition vs inheritance
+- Mixins & delegation
+- `Object.freeze` / `seal` / `assign`
 
 ### **Mini Projects**
 
--   Implement your own `new` keyword
-    
--   Create a class-based EventEmitter
-    
+- Implement `new` keyword
+- Class-based EventEmitter
 
-----------
+---
 
 ## 🧩 GROUP 7: Meta Programming — Proxy, Reflect & Internal Hooks
 
-> “How JavaScript can modify itself.”
+> "How JS can modify itself."
 
-### **Concepts**
+### **Concepts Covered**
 
--   Proxies & traps (`get`, `set`, `has`, `delete`)
-    
--   Reflect API
-    
--   Revocable proxies
-    
--   Dynamic validation layers
-    
--   Intercepting function calls
-    
--   Lazy evaluation & computed values
-    
--   Internal slot access
-    
+- Proxy traps (`get`, `set`, `has`, etc.)
+- Reflect API
+- Revocable proxies
+- Intercepting function calls
+- Lazy evaluation & dynamic behavior
+- Internal slots
 
 ### **Mini Projects**
 
--   Create validation proxy
-    
--   Auto-logging object wrapper
-    
+- Validation proxy
+- Auto-logging wrapper
 
-----------
+---
 
 ## 🧰 GROUP 8: Design Patterns & Architecture
 
-> “Structure your JavaScript like an engineer.”
+> "Structure your JavaScript like an engineer."
 
-### **Concepts**
+### **Concepts Covered**
 
--   CommonJS vs ESM modules
-    
--   Module pattern & revealing module
-    
--   Singleton, Factory, Observer, Proxy patterns
-    
--   Dependency Injection
-    
--   Pub/Sub design
-    
--   Event-driven architectures
-    
--   Separation of concerns
-    
--   Inversion of control (IoC)
-    
--   Plugin systems
-    
+- Module systems: ESM vs CJS
+- Module pattern & revealing module
+- Singleton, Factory, Observer, Proxy
+- Dependency Injection & IoC
+- Pub/Sub
+- Event-driven architectures
+- Separation of concerns
+- Plugin architectures
 
 ### **Mini Projects**
 
--   Build plugin architecture
-    
--   Pub/Sub notification module
-    
+- Plugin architecture
+- Pub/Sub notification module
 
-----------
+---
 
 ## 🚀 GROUP 9: Performance, Memory & V8 Internals
 
-> “Write code that’s fast, memory-efficient, and production-ready.”
+> "Write code that's fast, memory-safe, and production-ready."
 
-### **Concepts**
+### **Concepts Covered**
 
--   V8 internals (hidden classes, inline caching)
-    
--   Engine optimization triggers
-    
--   Memory leaks & heap snapshots
-    
--   Garbage collection (mark & sweep)
-    
--   WeakMap & WeakSet
-    
--   Performance profiling (`Performance API`, Node `perf_hooks`)
-    
--   Throttling & debouncing
-    
--   Caching (in-memory vs persistent)
-    
--   Big O reasoning for JS structures
-    
--   Avoiding de-optimization traps
-    
+- V8 internals (hidden classes, inline caching)
+- Engine optimization triggers
+- De-optimization traps
+- Memory leaks & heap snapshots
+- GC (mark & sweep)
+- WeakMap & WeakSet
+- Performance profiling (browser + Node)
+- Throttling & debouncing
+- Big O reasoning
 
 ### **Mini Projects**
 
--   Performance benchmark tool
-    
--   Cache decorator using WeakMap
-    
+- Performance benchmark tool
+- WeakMap-based cache decorator
 
-----------
+---
 
 ## 🌟 GROUP 10: Modern ESNext & Future JavaScript
 
-> “Write the JS of tomorrow, today.”
+> "Write the JS of tomorrow, today."
 
-### **Concepts**
+### **Concepts Covered**
 
--   Optional chaining (`?.`) and nullish coalescing (`??`)
-    
--   Logical assignment operators
-    
--   Top-level await
-    
--   Async iterators
-    
--   Decorators
-    
--   Private fields & class features
-    
--   Pattern matching (proposal)
-    
--   Record & Tuple (proposal)
-    
--   Temporal API (proposal)
-    
--   Intl API & localization
-    
--   Observables (proposal)
-    
+- Optional chaining & nullish coalescing
+- Logical assignment operators
+- Top-level await
+- Async iterators
+- Decorators
+- Private fields & static blocks
+- Pattern matching (proposal)
+- Record & Tuple (proposal)
+- Temporal API
+- Observables (proposal)
 
 ### **Mini Projects**
 
--   Decorator-based validator
-    
--   Async iterator for pagination
-    
+- Decorator-based validator
+- Async iterator pagination utility
 
-----------
+---
 
 ## 🧩 GROUP 11: Testing, Debugging & Reliability
 
-> “Code that runs perfectly under pressure.”
+> "Code that runs perfectly under pressure."
 
-### **Concepts**
+### **Concepts Covered**
 
--   Debugging workflows (DevTools breakpoints, watch expressions)
-    
--   Console toolkit (`console.table`, `console.group`, timers, tracing)
-    
--   Source maps & stack trace interpretation
-    
--   Performance profiling (Lighthouse, Node `--inspect`)
-    
--   Memory diagnostics (heap snapshots, leaks)
-    
--   Unit testing (Jest, Vitest)
-    
--   Mocking timers, fetch, and Node modules
-    
--   Integration testing (API stubs, DOM harnesses)
-    
--   Error boundaries & global error handlers
-    
--   Structured logging & levels
-    
--   Async error propagation
-    
--   Resource cleanup patterns
-    
+- Debugging workflows (breakpoints, watch expressions)
+- Console toolkit (`console.table`, etc.)
+- Stack trace interpretation
+- Source maps
+- Memory diagnostics (heap snapshots)
+- Unit testing (Jest, Vitest)
+- Mocking timers/modules/fetch
+- Integration testing
+- Error boundaries
+- Structured logging & log levels
+- Async error propagation
+- Resource cleanup patterns
 
 ### **Mini Projects**
 
--   CLI test runner using Jest API
-    
--   Debugging playbook template
-    
--   Structured logging helper
-    
+- CLI test runner
+- Debugging playbook template
+- Structured logging utility
 
-----------
+---
 
 ## 🧩 SUMMARY — Concept Flow in Logical Order
 
-#
+| Group | Theme | Core Question |
+|-------|-------|---------------|
+| 0 | Language Fundamentals | What does every value mean? |
+| 1 | Execution & Scope | How does JS run your code? |
+| 2 | Functions | How do functions create behavior? |
+| 3 | Core APIs | How does JS talk to the environment? |
+| 4 | Async JS | Why doesn't JS block? |
+| 5 | `this` Binding | Who is calling? |
+| 6 | Objects & Prototypes | How is behavior shared? |
+| 7 | Metaprogramming | How can JS modify itself? |
+| 8 | Patterns & Architecture | How do we design scalable systems? |
+| 9 | Performance | How does JS optimize? |
+| 10 | ESNext | What's new in JS? |
+| 11 | Testing | How do we ensure reliability? |
 
-Group
-
-Theme
-
-Core Question It Answers
-
-0
-
-Language Fundamentals
-
-What every value means
-
-How do types, coercion, and equality really work?
-
-1
-
-Execution & Scope
-
-How JS runs your code
-
-What happens when JS starts executing?
-
-2
-
-Functions & Composition
-
-How functions power JS
-
-How do functions create behavior?
-
-3
-
-Core Libraries & APIs
-
-How JS talks to its environment
-
-What tools does the runtime give us out of the box?
-
-4
-
-Asynchronous JS
-
-How JS multitasks
-
-Why doesn’t JS block?
-
-5
-
-this & Context
-
-Who executes
-
-Why does behavior depend on call-site?
-
-6
-
-Objects & Prototypes
-
-How JS shares logic
-
-How does inheritance really work?
-
-7
-
-Meta Programming
-
-How JS introspects itself
-
-Can JS modify its own behavior?
-
-8
-
-Design Patterns
-
-How to structure scalable apps
-
-How do we design for growth?
-
-9
-
-Performance & Internals
-
-How JS performs under load
-
-How can we make it faster?
-
-10
-
-Modern ESNext
-
-What’s new in JS
-
-What language power-ups can we use now?
-
-11
-
-Testing & Reliability
-
-How to ship confidently
-
-How do we ensure JS doesn’t break?
-
-----------
+---
 
 ## ⚙️ Execution Plan
 
-**Phase 1 — Core JS Brain (Groups 0 → 4)**  
-→ Build unshakable mastery of values, execution, standard APIs, and async flow.
+### **Phase 1 — Core JS Brain (Groups 0 → 4)**
 
-**Phase 2 — Architect’s Toolkit (Groups 5 → 8)**  
-→ Nail context, object systems, meta hooks, and reusable patterns.
+Foundations, behavior, async flow, platform APIs.
 
-**Phase 3 — Expert Layer (Groups 9 → 11)**  
-→ Sharpen performance tuning, modern language fluency, and reliability playbooks.
+### **Phase 2 — Architect's Toolkit (Groups 5 → 8)**
 
-----------
+Context, object systems, meta hooks, scalable design.
+
+### **Phase 3 — Expert Layer (Groups 9 → 11)**
+
+Performance, modern language features, reliability, testing.
+
+---
 
 ## 🚀 Expected Outcome
 
--   **60+ expert-level tutorials** for BytesJourney
-    
--   **10+ full-length course modules** for “JavaScript Mastery”
-    
--   **Portfolio-worthy mini-projects** and GitHub examples
-    
--   **Interview + production readiness** for Senior/Tech Lead roles
+- **60+ expert-level tutorials** for BytesJourney
+- **12 full-length course modules** for "JavaScript Mastery"
+- **Portfolio-worthy mini-projects** and GitHub examples
+- **Interview + production readiness** for Senior/Tech Lead roles
+
+---
+
+*Last updated: January 2025 | JavaScript Mastery Series*
